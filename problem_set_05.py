@@ -84,6 +84,9 @@ print(f"test_str = {rhino_str}")
 # START PROBLEM 2 SOLUTION
 word_lengths = []
 
+for word in rhino_str.split(' '):
+    word_lengths.append(len(word))
+
 
 print(f"word_lengths = {word_lengths}")
 
@@ -130,8 +133,11 @@ print(f"multi_line_str = {multi_line_str}")
 
 # START PROBLEM 3 SOLUTION
 def count_vowels(some_str):
-    pass # FIX ME (replace pass)
-
+    vowels = 0
+    for letter in some_str:
+        if letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u':
+            vowels += 1
+    return vowels
 
 
 # TESTING: use the two sample strings provided to test your function.
@@ -149,113 +155,3 @@ multi_line_str_vowel_count = count_vowels(multi_line_str)
 print(f"multi_line_str_vowel_count = {multi_line_str_vowel_count}")
 
 # END PROBLEM 3 SOLUTION
-
-
-# PROBLEM 4:
-# Working with a list, demonstrate your understanding of the following
-# concepts and operations:
-# 1) designing a function that accepts two arguments and returns a value
-# 2) using lists and list indices
-
-# INSTRUCTIONS: Write a function named get_element that accepts two arguments:
-# a list and an integer. The function will return a list element
-# by its index position using the supplied integer as the index
-# position value.
-
-# We have provided a list named more_elements that you should use
-# to test your function.
-
-# HINT: calling get_element(more_elements, 0) will return "salad".
-# If you test with an integer >= len(more_elements), e.g.,
-# get_element(more_elements, 10), you will throw a list index out of range error.
-
-# START PROBLEM 4 SETUP
-more_elements = ["salad", 33, 3.14, ['dog','cat'], "fish", 19, 18]
-
-print(f"more_elements = {more_elements}")
-
-# END PROBLEM 4 SETUP
-
-# START PROBLEM 4 SOLUTION
-def get_element(a_list, a_int):
-    pass # FIX ME (replace pass)
-
-print(f"get_element = {get_element(more_elements, 0)}")
-
-# END PROBLEM 4 SOLUTION
-
-
-# PROBLEM 5
-# Working with a list of strings, demonstrate your understanding of the following
-# # concepts and operations:
-# 1) using the with statement and the built-in function open(path, 'mode')
-# 2) selecting the correct parameter mode for the desired file operation
-#    (e.g., read or write)
-# 3) implementing a for loop
-# 4) writing data to a file
-
-# INSTRUCTIONS: Use the with statement and the built-in function open(path, 'mode')
-# to obtain a writable file object associated with the file named problem_4.txt.
-# Then write the elements of the list named recipe to the file. Each element must be
-# written to a separate line in the same sequence as the element appears in the list.
-
-# START PROBLEM 5 SETUP
-recipe = [
-    'Preheat oven to 350 degrees F (175 degree C).\n',
-    'Place the sliced apples in a 9x13 inch pan.\n',
-    'Mix the white sugar, 1 tablespoon flour and ground cinnamon together, and sprinkle over the apples.\n',
-    'Pour water evenly over all.\n',
-    'Combine the oats, 1 cup of flour, brown sugar, baking powder, baking soda and melted butter together.\n',
-    'Crumble evenly over the apple mixture.\n',
-    'Bake at 350 degrees F (175 degrees C) for about 45 minutes.'
-]
-
-# END PROBLEM 5 SETUP
-
-# BEGIN PROBLEM 5 SOLUTION
-
-
-
-
-# END PROBLEM 5 SOLUTION
-
-
-# PROBLEM 6
-# Working with the function below, demonstrate the following skills:
-# 1) ability to read code
-# 2) ability to debug and fix broken code
-# 3) ability to test code
-
-# INSTRUCTIONS: The function get_counts() accepts two arguments:
-# a file name and a list of characters. Fix the function so that it
-# performs the following operations:
-# 1) opens a file in read mode and returns a file object
-# 2) iterates over each line in the file object (outer loop),
-# 3) iterates over each character in the line (inner loop),
-# 4) checks if the character matches a character in the list characters
-# 5) increments the counter by 1 if a match is made
-# 6) returns the count
-
-# HINT: Use the file problem_4.tx created earlier to test the function as you work on it.
-# For example if pass in a list of vowels to match on you should return a count of 118.
-# Also, try using print() to visualize the values in the outer and inner loops as you
-# work to fix this code.
-
-# BEGIN PROBLEM 6 SOLUTION
-def get_counts(file_name, characters):
-    counter = 0
-    with open(file_name, "r") as file_obj:
-        for line in file_obj:
-            for char in xyz: # FIX ME (for char in xyz statement throws NameError. Replace xyz with correct sequence.)
-                pass # FIX ME (add missing conditional statement)
-                         # FIX ME (do something with the counter)
-    return counter
-
-
-matches = get_counts('problem_4.txt', ['1','2','3','4','5','6','7','8','9','0'])
-
-print(f"matches = {matches}")
-
-# END PROBLEM 6 SOLUTION
-
-# END PROBLEM SET
